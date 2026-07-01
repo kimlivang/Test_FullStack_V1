@@ -1,0 +1,159 @@
+/* =====================================================
+   HOME HERO SECTION — Digital Store Services
+   ===================================================== */
+
+/* ---------- Section Wrapper ---------- */
+.home-hero {
+    position: relative;
+    min-height: 100vh;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* ---------- Eyebrow ---------- */
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: var(--text-secondary, #94a3b8);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    width: fit-content;
+}
+
+/* ---------- Hero Title ---------- */
+.hero-title {
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #f1f5f9;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-primary, #6366f1) 0%, var(--color-secondary, #14b8a6) 60%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ---------- CTA Buttons ---------- */
+.btn-primary-glow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--color-primary, #6366f1), #818cf8);
+    color: #fff !important;
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+    padding: 0.75rem 1.75rem;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+}
+
+.btn-primary-glow:hover::before {
+    opacity: 1;
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(99, 102, 241, 0.50);
+    color: #fff !important;
+}
+
+/* ---------- Tag Badges ---------- */
+.hero-tags .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    color: var(--text-secondary, #94a3b8);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border-radius: 8px;
+    letter-spacing: 0.2px;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.hero-tags .badge:hover {
+    background: rgba(99, 102, 241, 0.10);
+    border-color: rgba(99, 102, 241, 0.35);
+    color: #c7d2fe;
+}
+
+/* ---------- Stats Row ---------- */
+.hero-stats {
+    border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.stat-value {
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #f1f5f9 0%, var(--color-secondary, #14b8a6) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary, #64748b);
+    letter-spacing: 0.3px;
+    margin-top: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767.98px) {
+    .home-hero {
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero-actions {
+        justify-content: stretch;
+    }
+
+    .btn-primary-glow {
+        justify-content: center;
+    }
+
+    .stat-value {
+        font-size: 1.3rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+}

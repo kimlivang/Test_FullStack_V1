@@ -13,30 +13,27 @@ use App\Http\Controllers\RegisterController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+            // Route::get('/', function () {
+            //     return view('welcome');
+            // });
 
-            Route::get('/', function () {
-                return view('welcome');
-            });
-
-            // ទំព័រ Home (/home)
-            Route::get('/home', function () {
-                return view('pages.home');
-            });
-
-            // ទំព័រ Product (/product)
-            Route::get('/product', function () {
-                return view('pages.product');
-            });
-
-            // ទំព័រ About (/about)
-            Route::get('/about', function () {
-                return view('pages.about');
-            });
-
-            // ទំព័រ Contact (/contact)
-            Route::get('/contact', function () {
-                return view('pages.contact');
-            });
+            //Home Pages
+            Route::get('/home', function () {   return view('pages.home');  })->name('home');
+            
+            // Other Pages
+            Route::get('/products', function(){ return view('pages.products');  })->name('products');
+            Route::get('/about', function(){ return view('pages.about');  })->name('about');
+            Route::get('/contact', function(){ return view('pages.contact');  })->name('contact');
+            Route::get('/categories/{category?}', function($category = null){ return view('pages.Category', ['selectedCategory' => $category]);  })->name('categories');
+            Route::get('/category/{category?}', function($category = null){ return view('pages.Category', ['selectedCategory' => $category]);  })->name('category');
+            
 
             // Route::get('/frmRegister', [RegisterController::class, 'showForm'])->name('register.submit');
             // Route::post('/register', [RegisterController::class, 'RegsFrm'])->name('register.submit');
+            
+            // Authentication Pages
+            Route::get('/login', function () { return view('Auth.login'); })->name('login');
+            Route::post('/login', function () { return redirect('/home'); });
+
+            Route::get('/register', function () { return view('Auth.register'); })->name('register');
+            Route::post('/register', function () { return redirect('/home'); })->name('register.submit');
