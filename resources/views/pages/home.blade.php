@@ -47,13 +47,11 @@
             padding-top: 4rem;
             padding-bottom: 5rem;
             z-index: 1;
-            /* ensure it sits above the layout's background */
         }
 
         /* ─── Hero inner container (uses the same grid as the layout) ─── */
         .hero-cover .container {
             max-width: 1140px;
-            /* or whatever your layout uses */
             padding-left: 15px;
             padding-right: 15px;
         }
@@ -294,22 +292,10 @@
             transform-origin: center;
         }
 
-        .wave-a {
-            animation-duration: 18s;
-            animation-delay: 0s;
-        }
-        .wave-b {
-            animation-duration: 26s;
-            animation-delay: -4s;
-        }
-        .wave-c {
-            animation-duration: 22s;
-            animation-delay: -8s;
-        }
-        .wave-d {
-            animation-duration: 30s;
-            animation-delay: -12s;
-        }
+        .wave-a { animation-duration: 18s; animation-delay: 0s; }
+        .wave-b { animation-duration: 26s; animation-delay: -4s; }
+        .wave-c { animation-duration: 22s; animation-delay: -8s; }
+        .wave-d { animation-duration: 30s; animation-delay: -12s; }
 
         @keyframes neon-flow {
             0% {
@@ -329,24 +315,13 @@
             animation: float-symbol 15s infinite ease-in-out alternate;
         }
 
-        .symbol-1 {
-            animation-duration: 12s;
-        }
-        .symbol-2 {
-            animation-duration: 18s;
-            animation-delay: -3s;
-        }
+        .symbol-1 { animation-duration: 12s; }
+        .symbol-2 { animation-duration: 18s; animation-delay: -3s; }
 
         @keyframes float-symbol {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-15px) rotate(8deg);
-            }
-            100% {
-                transform: translateY(10px) rotate(-8deg);
-            }
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(8deg); }
+            100% { transform: translateY(10px) rotate(-8deg); }
         }
 
         .sparkle {
@@ -361,18 +336,406 @@
         .sparkle-6 { animation-duration: 4.5s; animation-delay: 2.5s; }
 
         @keyframes flash-sparkle {
-            0% {
-                opacity: 0.2;
-                transform: scale(0.8);
-            }
-            50% {
-                opacity: 0.8;
-                transform: scale(1.2);
-            }
-            100% {
-                opacity: 0.2;
-                transform: scale(0.8);
-            }
+            0% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+            100% { opacity: 0.2; transform: scale(0.8); }
+        }
+
+        /* ─── Advantages Section Styling ─── */
+        .advantage-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--panel-border-hover);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+        }
+
+        .advantage-card .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--gradient-glow);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            margin-bottom: 1.25rem;
+            transition: var(--transition-smooth);
+        }
+
+        .advantage-card:hover .icon-box {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            border-color: transparent;
+        }
+
+        .advantage-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .advantage-card p {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* ─── Section Headers ─── */
+        .section-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* ─── Product Card Styling ─── */
+        .product-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            position: relative;
+            transition: var(--transition-smooth);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--panel-border-hover);
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gradient-accent);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--panel-border);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover .product-icon {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            transform: scale(1.05);
+        }
+
+        .product-category {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .product-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 0.35rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .product-desc {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 1.25rem;
+        }
+
+        .rating {
+            font-size: 0.85rem;
+            color: #fbbf24;
+        }
+
+        .price-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .old-price {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .current-price {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.1;
+        }
+
+        .btn-buy-now {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            border-radius: 8px;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            text-align: center;
+        }
+
+        .btn-buy-now:hover {
+            box-shadow: 0 6px 22px rgba(99, 102, 241, 0.5);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* ─── Testimonial Styling ─── */
+        .testimonial-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--panel-border-hover);
+            transform: translateY(-3px);
+        }
+
+        .review-text {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .testimonial-card .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-card .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+        }
+
+        .user-name {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .user-status {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* ─── FAQ Section Styling ─── */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .faq-item summary {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            user-select: none;
+            transition: var(--transition-fast);
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary:hover {
+            background: rgba(255, 255, 255, 0.02);
+            color: white;
+        }
+
+        .faq-chevron {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .faq-item[open] {
+            border-color: var(--panel-border-hover);
+        }
+
+        .faq-item[open] summary {
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .faq-item[open] .faq-chevron {
+            transform: rotate(180deg);
+            color: var(--color-primary);
+        }
+
+        .faq-content {
+            padding: 1.25rem 1.5rem;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-content p {
+            margin: 0;
+        }
+
+        /* ─── Footer CTA Styling ─── */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(20, 27, 45, 0.9) 0%, rgba(11, 15, 25, 0.9) 100%);
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            top: -150px;
+            left: -150px;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+            bottom: -150px;
+            right: -150px;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .cta-title {
+            font-family: var(--font-heading);
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .cta-desc {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 1rem auto 0;
+            line-height: 1.6;
         }
 
         /* ─── Responsive tweaks ─── */
@@ -390,9 +753,14 @@
             .hero-description {
                 max-width: 100%;
             }
+            .section-title {
+                font-size: 2rem;
+            }
+            .cta-title {
+                font-size: 1.8rem;
+            }
         }
 
-        /* ─── Ensure the layout's body background is not overridden ─── */
         body {
             background-color: var(--bg-color);
         }
@@ -501,6 +869,294 @@
                             <div class="stat-label">Trust Score</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- KEY ADVANTAGES SECTION --}}
+    <section class="advantages-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="advantage-card">
+                        <div class="icon-box">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+                        <h3>Instant Delivery</h3>
+                        <p>Receive your activation key in under 2 minutes via email directly after checkout.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="advantage-card">
+                        <div class="icon-box">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3>100% Genuine</h3>
+                        <p>All keys are sourced directly from authorized distributors. Full warranty guaranteed.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="advantage-card">
+                        <div class="icon-box">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+                        <h3>Lifetime Support</h3>
+                        <p>Enjoy free technical assistance and lifetime activation updates for your software.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="advantage-card">
+                        <div class="icon-box">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                        <h3>Secure Payments</h3>
+                        <p>Pay with confidence using standard encryption and local secure payment gateways.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- FEATURED PRODUCTS SECTION --}}
+    <section class="products-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Featured <span class="gradient-text">Licenses</span></h2>
+                <p class="section-subtitle">Premium software at unbeatable prices. Activation guaranteed.</p>
+            </div>
+            
+            <div class="row g-4">
+                {{-- Product 1: Office 365 Pro --}}
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-icon">
+                            <i class="bi bi-microsoft text-danger"></i>
+                        </div>
+                        <div class="product-body d-flex flex-column h-100">
+                            <span class="product-category">OFFICE SUITE</span>
+                            <h3 class="product-title">Microsoft Office 365 Pro</h3>
+                            <p class="product-desc">5 Devices (PC/Mac/Mobile) + 1TB OneDrive Cloud Storage. Lifetime activation.</p>
+                            
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <span class="ms-2 text-muted">(184)</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="price-container">
+                                    <span class="old-price">$59.99</span>
+                                    <span class="current-price">$14.99</span>
+                                </div>
+                                <a href="#" class="btn btn-buy-now">
+                                    <span>Buy Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Product 2: Windows 11 Pro --}}
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-badge">Popular</div>
+                        <div class="product-icon">
+                            <i class="bi bi-windows text-primary"></i>
+                        </div>
+                        <div class="product-body d-flex flex-column h-100">
+                            <span class="product-category">OPERATING SYSTEM</span>
+                            <h3 class="product-title">Windows 11 Professional</h3>
+                            <p class="product-desc">Genuine retail product key. 32/64-bit support. Full multi-language activation.</p>
+                            
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                                <span class="ms-2 text-muted">(92)</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="price-container">
+                                    <span class="old-price">$129.99</span>
+                                    <span class="current-price">$19.99</span>
+                                </div>
+                                <a href="#" class="btn btn-buy-now">
+                                    <span>Buy Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Product 3: CapCut Pro --}}
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-badge">Hot Deal</div>
+                        <div class="product-icon">
+                            <i class="bi bi-camera-video text-warning"></i>
+                        </div>
+                        <div class="product-body d-flex flex-column h-100">
+                            <span class="product-category">VIDEO CREATIVE</span>
+                            <h3 class="product-title">CapCut Pro (1 Year)</h3>
+                            <p class="product-desc">Access to all premium effects, transitions, AI voiceovers, and templates.</p>
+                            
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <span class="ms-2 text-muted">(67)</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="price-container">
+                                    <span class="old-price">$99.99</span>
+                                    <span class="current-price">$24.99</span>
+                                </div>
+                                <a href="#" class="btn btn-buy-now">
+                                    <span>Buy Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- CUSTOMER TESTIMONIALS SECTION --}}
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">What Our <span class="gradient-text">Customers Say</span></h2>
+                <p class="section-subtitle">Check out these genuine reviews from verified license activation buyers.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-text">"Outstanding service! I bought the Office 365 license key and it arrived in my inbox within a minute. Activation was successful and easy."</p>
+                        <div class="user-info mt-4">
+                            <div class="avatar">S</div>
+                            <div>
+                                <h4 class="user-name">Sok Chea</h4>
+                                <span class="user-status"><i class="bi bi-patch-check-fill text-success"></i> Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-text">"Windows 11 activation worked perfectly. I had a slight issue with phone activation but support helped me solve it in a minute."</p>
+                        <div class="user-info mt-4">
+                            <div class="avatar">V</div>
+                            <div>
+                                <h4 class="user-name">Vireak Both</h4>
+                                <span class="user-status"><i class="bi bi-patch-check-fill text-success"></i> Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-text">"I buy keys for my agency clients here regularly. They are 100% genuine and never fail to activate. Strongly recommend!"</p>
+                        <div class="user-info mt-4">
+                            <div class="avatar">M</div>
+                            <div>
+                                <h4 class="user-name">Maly Roth</h4>
+                                <span class="user-status"><i class="bi bi-patch-check-fill text-success"></i> Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- FAQ SECTION (Pure HTML/CSS Collapse) --}}
+    <section class="faq-section py-5">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Frequently <span class="gradient-text">Asked Questions</span></h2>
+                <p class="section-subtitle">Got questions? We've got answers.</p>
+            </div>
+            
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>
+                        <span>How long does delivery take?</span>
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Our delivery system is fully automated. You will receive your license key and installation instructions via email in under 2 minutes right after checkout.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span>Are the licenses permanent?</span>
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Yes, all Windows and Office retail keys sold on our website are lifetime licenses unless specified otherwise (e.g. subscription-based packages).</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span>What if my key fails to activate?</span>
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>We guarantee 100% activation. In the rare event a key fails, please contact our support email with a screenshot of the error, and we will issue a replacement key immediately.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    {{-- FOOTER CTA SECTION --}}
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="cta-box text-center">
+                <h2 class="cta-title">Upgrade Your Digital Experience Today</h2>
+                <p class="cta-desc">Get access to premium tools, genuine activations, and full warranty support.</p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-primary-glow btn-lg">
+                        <span>Browse All Products</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>

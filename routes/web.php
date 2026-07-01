@@ -15,7 +15,7 @@ use App\Http\Controllers\RegisterController;
 */
 
             Route::get('/', function () {
-                return view('welcome');
+                return view('pages.home');
             });
 
             // ទំព័រ Home (/home)
@@ -23,10 +23,10 @@ use App\Http\Controllers\RegisterController;
                 return view('pages.home');
             });
 
-            // ទំព័រ Product (/product)
-            Route::get('/product', function () {
-                return view('pages.product');
-            });
+            // ទំព័រ Product (/products)
+            Route::get('/products', function () {
+                return view('pages.products');
+            })->name('products');
 
             // ទំព័រ About (/about)
             Route::get('/about', function () {
